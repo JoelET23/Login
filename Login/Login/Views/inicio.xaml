@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Login.Views.inicio"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <Grid Padding="20, 30, 30, 30">
+            <Label Text="Seleccione un usuario" FontSize="Medium" TextColor="#000000" FontAttributes="Bold"  Margin="0, 0, 15, 35"/>
+            <CollectionView ItemsSource="{Binding AlumnosUsers}" SelectionMode="Single" Margin="0, 80, 0, 0" x:Name="TouchAlumno">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="4" VerticalItemSpacing="20" HorizontalItemSpacing="30"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame HeightRequest="150" Padding="15" CornerRadius="20" BackgroundColor="#ececec">
+                            <Grid>
+                                <Image Source="{Binding Foto}" WidthRequest="50" HorizontalOptions="Center"/>
+                                <Label Grid.RowSpan="3" Grid.Column="0" Text="{Binding Nombre}" FontSize="19" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                <Label Grid.RowSpan="4" Grid.Column="0" Text="{Binding Edad}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>
+ </ContentPage>

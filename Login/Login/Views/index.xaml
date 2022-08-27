@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Login.Views.index"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <FlexLayout HorizontalOptions="Center">
+            <Frame WidthRequest="400" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Padding="20,20,30,10" Margin="200,0">
+                <StackLayout HorizontalOptions="CenterAndExpand">
+                    <Label Text="Bienvenido" TextColor="Black" HorizontalTextAlignment="Center" FontSize="30" Margin="5,0,30,20"/>
+                    <Label Text="Email" TextColor="Gray"/>
+                    <Entry Placeholder="correo@mail.com" Keyboard="Email" FontSize="Medium" PlaceholderColor="Black" Text="{Binding Email}"></Entry>
+                    <Label Text="Contraseña" TextColor="Gray"/>
+                    <Entry Placeholder="**********" IsPassword="True" FontSize="Medium" PlaceholderColor="Black" Text="{Binding Contrasena}"/>
+                    <FlexLayout FlexLayout.Grow="1">
+                        <Frame WidthRequest="200" Margin="0,0,40,0" HasShadow="False">
+                            <Label FontAttributes="Bold" FontSize="13" HorizontalTextAlignment="Start" Text="Olvidé mi contraseña" TextColor="Black"/>
+                        </Frame>
+                        <Frame WidthRequest="200" HasShadow="False">
+                            <Label FontAttributes="Bold" FontSize="13" HorizontalTextAlignment="End" Text="Crear cuenta" TextColor="Black"/>
+                        </Frame>
+                    </FlexLayout>
+                    <Button Text="Iniciar sesión" Command="{Binding LoginCommand}"/>
+                </StackLayout>
+            </Frame>
+            <Label Text="No hay conexión a Internet" Background="red" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="End" IsVisible="{Binding Conexion}"/>
+        </FlexLayout>
+    </ContentPage.Content>
+</ContentPage>
