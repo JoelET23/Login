@@ -4,24 +4,34 @@
              x:Class="Login.Views.inicio"
              NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
-        <Grid Padding="20, 30, 30, 30">
-            <Label Text="Seleccione un usuario" FontSize="Medium" TextColor="#000000" FontAttributes="Bold"  Margin="0, 0, 15, 35"/>
-            <CollectionView ItemsSource="{Binding AlumnosUsers}" SelectionMode="Single" Margin="0, 80, 0, 0" x:Name="TouchAlumno">
+        <Grid Padding="20, 30, 30, 30" Background="#FFFFFF">
+            <Label Text="Seleccione un usuario" Style="{StaticResource LblTitulos}"/>
+            <CollectionView ItemsSource="{Binding AlumnosUsers}" SelectionMode="Single" VerticalOptions="Center" Margin="0,80,0,0" x:Name="TouchAlumno">
                 <CollectionView.ItemsLayout>
-                    <GridItemsLayout Orientation="Vertical" Span="4" VerticalItemSpacing="20" HorizontalItemSpacing="30"/>
+                    <GridItemsLayout Orientation="Vertical" Span="4" VerticalItemSpacing="20" HorizontalItemSpacing="20"/>
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Frame HeightRequest="150" Padding="15" CornerRadius="20" BackgroundColor="#ececec">
+                        <Frame HeightRequest="150" Padding="15,15,15,15" CornerRadius="20" BackgroundColor="#F0EFFC" HasShadow="False">
                             <Grid>
-                                <Image Source="{Binding Foto}" WidthRequest="50" HorizontalOptions="Center"/>
-                                <Label Grid.RowSpan="3" Grid.Column="0" Text="{Binding Nombre}" FontSize="19" VerticalOptions="Center" HorizontalOptions="Center"/>
-                                <Label Grid.RowSpan="4" Grid.Column="0" Text="{Binding Edad}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                <Image Grid.RowSpan="3" WidthRequest="50" HeightRequest="50" VerticalOptions="Start"  Source="{Binding Foto}" Margin="0,15,0,0"/>
+                                <Label Grid.RowSpan="3" Text="{Binding Nombre}" Style="{StaticResource LblNombres}" />
+                                <Label Grid.RowSpan="3" Text="{Binding Edad}" Style="{StaticResource LblEdad}"/>
                             </Grid>
                         </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            <FlexLayout HeightRequest="60" VerticalOptions="End">
+                
+                <Frame Padding="30,0,0,0" Background="#EF4F4F" CornerRadius="0" HasShadow="False">
+                    <Label Text="&#xe87c;" FontFamily="RegularMaterial" VerticalOptions="Center" TextColor="#FFFFFF" FontSize="30" Margin="0,3,15,0"/>
+                </Frame>
+                <Frame Padding="0,0,30,0" Background="#EF4F4F" CornerRadius="0" HasShadow="False">
+                    <Label Text="Agregar alumno" Margin="0" VerticalTextAlignment="Center" TextColor="#FFFFFF" FontSize="18" FontAttributes="Bold"/>
+                </Frame>
+            </FlexLayout>
         </Grid>
+        
     </ContentPage.Content>
  </ContentPage>

@@ -8,6 +8,11 @@ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+[assembly: ExportFont("MaterialIconsRegular.ttf", Alias = "RegularMaterial")]
+[assembly: ExportFont("MaterialIconsTwoTone.otf", Alias = "TwoToneMaterial")]
+[assembly: ExportFont("TommyBold.ttf", Alias = "TommyBold")]
+[assembly: ExportFont("TommyThin.ttf", Alias = "TommyThin")]
+
 namespace Login
 {
     public partial class App : PrismApplication
