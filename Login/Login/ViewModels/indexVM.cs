@@ -27,6 +27,7 @@ namespace Login.ViewModels
             set => SetProperty(ref contrasena, value);
         }
 
+
         public DelegateCommand LoginCommand
         {
             get;

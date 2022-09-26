@@ -23,19 +23,14 @@ namespace Login.Views
             TouchAlumno.SelectionChanged += TouchAlumno_SelectionChanged;
         }
 
-        //protected INavigationService NavigationService { get; set; }
-
         private async void TouchAlumno_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var _clickAlumnos = e.CurrentSelection;
-            string msg = String.Empty;
-            msg = "Click Alumno \n";
-
+           
             for (int i=0; i<_clickAlumnos.Count; i++)
             {
-                var _clickAlumno = _clickAlumnos[i] as AlumnoUser;
-                msg += $"{_clickAlumno.Nombre} ({_clickAlumno.Edad})";
-                await Navigation.PushAsync(new Juegos(_clickAlumno.Nombre, _clickAlumno.Edad));
+                var _clickAlumno = _clickAlumnos[i] as AlumnoUserModels;
+                await Navigation.PushAsync(new Juegos(_clickAlumno.Nombre, _clickAlumno.Foto));
                 //Intent intent = new Intent((Context)_clickAlumno.Nombre, typeof(Juegos));
                 //DisplayAlert("Prueba", msg, "OK");
             }

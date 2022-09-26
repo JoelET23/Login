@@ -9,65 +9,75 @@
             <Style TargetType="Label" x:Key="LblTitulos">
                 <Setter Property="TextColor" Value="#1B1464"/>
                 <Setter Property="FontSize" Value="32"/>
-                <Setter Property="Margin" Value="5,0,30,20"/>
+                <Setter Property="Margin" Value="5,0,30,0"/>
                 <Setter Property="HorizontalTextAlignment" Value="Start"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="FontFamily" Value="TommyThin"/>
+                <Setter Property="FontFamily" Value="TommyB"/>
             </Style>
 
             <Style TargetType="Label" x:Key="LblTitulosInput">
                 <Setter Property="TextColor" Value="#100C3C"/>
                 <Setter Property="FontSize" Value="12"/>
                 <Setter Property="HorizontalTextAlignment" Value="Start"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontFamily" Value="TommyB"/>
             </Style>
 
             <Style TargetType="Label" x:Key="LblCreate">
                 <Setter Property="TextColor" Value="#3124B5"/>
                 <Setter Property="FontSize" Value="12"/>
+                <Setter Property="TextDecorations" Value="Underline"/>
+                <Setter Property="FontFamily" Value="TommyR"/>
             </Style>
 
             <Style TargetType="Label" x:Key="Lblredes">
                 <Setter Property="TextColor" Value="#1B1464"/>
-                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="FontFamily" Value="TommyR"/>
             </Style>
 
             <Style TargetType="Button" x:Key="BtnLogin">
                 <Setter Property="TextColor" Value="#FFFFFF"/>
-                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="FontSize" Value="15"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="Background" Value="#EF4F4F"/>
-                <Setter Property="HeightRequest" Value="40"/>
+                <Setter Property="HeightRequest" Value="50"/>
                 <Setter Property="Margin" Value="0,15,0,0"/>
                 <Setter Property="CornerRadius" Value="8"/>
-                <Setter Property="TextTransform" Value="Lowercase"/>
+                <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="FontFamily" Value="TommyB"/>
+                <Setter Property="Padding" Value="30,0,30,0"/>
             </Style>
 
             <Style TargetType="Entry" x:Key="InputLogin">
                 <Setter Property="PlaceholderColor" Value="#716CA4"/>
                 <Setter Property="FontSize" Value="14"/>
                 <Setter Property="TextColor" Value="#100C3C"/>
+                <Setter Property="FontFamily" Value="TommyR"/>
+                <Setter Property="HeightRequest" Value="45"/>
             </Style>
 
             <!--Pantalla Usuarios-->
             <Style TargetType="Label" x:Key="LblNombres">
                 <Setter Property="VerticalOptions" Value="Center"/>
-                <Setter Property="HorizontalOptions" Value="Center"/>
-                <Setter Property="Margin" Value="0,30,0,0"/>
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="Margin" Value="10,10,0,0"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="FontSize" Value="18"/>
                 <Setter Property="TextColor" Value="#1B1464"/>
             </Style>
 
             <Style TargetType="Label" x:Key="LblEdad">
                 <Setter Property="VerticalOptions" Value="End"/>
-                <Setter Property="HorizontalOptions" Value="Center"/>
-                <Setter Property="Margin" Value="0,0,0,20"/>
-                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="Margin" Value="10,0,0,10"/>
+                <Setter Property="FontSize" Value="15"/>
                 <Setter Property="TextColor" Value="#685DDE"/>
             </Style>
 
-
+            <Style TargetType="Image" x:Key="ImagenList">
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="WidthRequest" Value="80"/>
+                <Setter Property="HeightRequest" Value="60"/>
+            </Style>
 
         </ResourceDictionary>
     </Application.Resources>

@@ -15,7 +15,7 @@ namespace Login.ViewModels
             get => email;
             set => SetProperty(ref email, value);
         }
- 
+
         public inicioVM(INavigationService navSer) : base(navSer)
         {
         }
@@ -28,44 +28,44 @@ namespace Login.ViewModels
             Email = email;
         }
 
-        public ObservableCollection<AlumnoUser> AlumnosUsers { get; set; }
+        public ObservableCollection<AlumnoUserModels> AlumnosUsers { get; set; }
 
         public inicioVM()
         {
-            AlumnosUsers = new ObservableCollection<AlumnoUser>
+            AlumnosUsers = new ObservableCollection<AlumnoUserModels>
             {
-                new AlumnoUser
+                new AlumnoUserModels
                 {
                     Id = 1,
                     Nombre = "Joel",
-                    Active = true,
+                    Active = "#F0EFFC",
                     Edad = 32,
                     Foto = "user.png"
                 },
 
-                new AlumnoUser
+                new AlumnoUserModels
                 {
                     Id = 2,
-                    Nombre = "Fabian",
-                    Active = false,
+                    Nombre = "Matilde",
+                    Active = "#F0EFFC",
                     Edad = 19,
-                    Foto = "user2.png"
-                },
-
-                new AlumnoUser
-                {
-                    Id = 3,
-                    Nombre = "Elmer",
-                    Active = false,
-                    Edad = 21,
                     Foto = "user3.png"
                 },
 
-                new AlumnoUser
+                new AlumnoUserModels
+                {
+                    Id = 3,
+                    Nombre = "Fabian",
+                    Active = "#F0EFFC",
+                    Edad = 21,
+                    Foto = "user2.png"
+                },
+
+                new AlumnoUserModels
                 {
                     Id = 4,
-                    Nombre = "Tello",
-                    Active = false,
+                    Nombre = "Maria",
+                    Active = "#F0EFFC",
                     Edad = 24,
                     Foto = "user4.png"
                 }

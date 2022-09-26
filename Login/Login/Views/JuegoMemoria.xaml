@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Login.Views.Juegos"
-             NavigationPage.HasNavigationBar="false"
-             BackgroundColor="#EDEDF3">
+             x:Class="Login.Views.JuegoMemoria"
+             NavigationPage.HasNavigationBar="false">
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
             <On Platform="iOS, Android" Value="0,0,0,0"/>
@@ -14,17 +13,16 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
                 <StackLayout Orientation="Horizontal">
                     <Frame HasShadow="False" BackgroundColor="Transparent" WidthRequest="380" HeightRequest="30">
-                        <Label Text="Áreas" Style="{StaticResource LblTitulos}" HorizontalOptions="Start"/>
+                        <Label Text="Memoria I" Style="{StaticResource LblTitulos}" HorizontalOptions="Start"/>
                     </Frame>
                     <Frame HasShadow="False" BackgroundColor="Transparent" WidthRequest="380">
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
                             <Image x:Name="FotoUser" Source="user.png" WidthRequest="30" HeightRequest="30"/>
-                            <Label x:Name="NombreUser" TextColor="#1B1464" FontFamily="TommyR" VerticalOptions="Center" Text="User" Margin="0,0,10,0"/>
+                            <Label x:Name="NombreUser" TextColor="#1B1464" FontFamily="TommyR" VerticalOptions="Center" Text="Joel" Margin="0,0,10,0"/>
                             <Image WidthRequest="55" HeightRequest="55" Source="backList.png">
                                 <Image.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="BackList"/>
@@ -39,26 +37,23 @@
                     </Frame>
                 </StackLayout>
             </Grid>
-            <Grid Grid.Row="1" HeightRequest="200">
-                <CollectionView ItemsSource="{Binding JuegosModel}" SelectionMode="Single" Margin="0,10,0,0" x:Name="TouchJuego">
+            <Grid Grid.Row="1">
+                <CollectionView ItemsSource="{Binding ListadoJuegoModel}" SelectionMode="Single" Margin="0,10,0,0" x:Name="TouchJuego">
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Orientation="Vertical" Span="4" VerticalItemSpacing="20" HorizontalItemSpacing="15"/>
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Frame HeightRequest="150" Padding="15" CornerRadius="20" BackgroundColor="#FFFFFF">
+                            <Frame HasShadow="False" HeightRequest="120" Padding="15" CornerRadius="20" BackgroundColor="#FFFFFF">
                                 <StackLayout Orientation="Vertical">
-                                    <Image Source="{Binding Foto}" WidthRequest="50" HorizontalOptions="Start"/>
-                                    <Label Text="{Binding Nombre}" Style="{StaticResource LblNombres}"/>
-                                    <Label Text="{Binding Porcentaje}" Style="{StaticResource LblEdad}"/>
+                                    <Image Source="{Binding Foto}" WidthRequest="100" HeightRequest="50" HorizontalOptions="Start"/>
+                                    <Label Text="{Binding NombreJuego}" Style="{StaticResource LblNombres}"/>
+                                    <Label Text="{Binding EdadFull}" Style="{StaticResource LblEdad}"/>
                                 </StackLayout>
                             </Frame>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-            </Grid>
-            <Grid Grid.Row="2">
-                <Image HorizontalOptions="End" Source="MissGabi.png"/>
             </Grid>
         </Grid>
 

@@ -1,7 +1,5 @@
-﻿using Android.Content;
-using Login.Models;
+﻿using Login.Models;
 using Login.ViewModels;
-using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,15 +12,12 @@ using Xamarin.Forms.Xaml;
 namespace Login.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Juegos : ContentPage
+    public partial class JuegoMemoria : ContentPage
     {
-        public Juegos(string n, string a)
+        public JuegoMemoria(string n, string a)
         {
             InitializeComponent();
-            BindingContext = new juegosVM();
-
-            NombreUser.Text = n;
-            FotoUser.Source = a;
+            BindingContext = new JuegoMemoriaVM();
 
             TouchJuego.SelectionChanged += TouchJuego_SelectionChanged;
         }
@@ -32,7 +27,7 @@ namespace Login.Views
             var _clickJuegos = e.CurrentSelection;
             for (int i = 0; i < _clickJuegos.Count; i++)
             {
-                var _clickJuego = _clickJuegos[i] as JuegoModels;
+                var _clickJuego = _clickJuegos[i] as JuegoMemoriaModels;
                 await Navigation.PushAsync(new JuegoMemoria("dom", "dem"));
                 /*Intent intent = new Intent((Context)_clickJuego.NombreJuego, typeof(Juegos));
                 DisplayAlert("Prueba", msg, "OK");*/

@@ -10,8 +10,7 @@ using Xamarin.Forms.Xaml;
 
 [assembly: ExportFont("MaterialIconsRegular.ttf", Alias = "RegularMaterial")]
 [assembly: ExportFont("MaterialIconsTwoTone.otf", Alias = "TwoToneMaterial")]
-[assembly: ExportFont("TommyBold.ttf", Alias = "TommyBold")]
-[assembly: ExportFont("TommyThin.ttf", Alias = "TommyThin")]
+
 
 namespace Login
 {
@@ -35,6 +34,7 @@ namespace Login
             containerRegistry.RegisterForNavigation<index, indexVM>();
             containerRegistry.RegisterForNavigation<inicio, inicioVM>();
             containerRegistry.RegisterForNavigation<Juegos, juegosVM>();
+            containerRegistry.RegisterForNavigation<JuegoMemoria, JuegoMemoriaVM>();
         }
     }
 }

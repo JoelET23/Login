@@ -2,17 +2,20 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Login.Views.index"
+             xmlns:local="clr-namespace:Login"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <FlexLayout FlexLayout.Grow="1" VerticalOptions="Center">
                 <Frame WidthRequest="350" VerticalOptions="Center" HorizontalOptions="Start" Padding="30,30,30,30" Margin="0">
                     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
                         <Label Text="Bienvenido" Style="{StaticResource LblTitulos}"/>
+                        
                         <Label Text="Email" Style="{StaticResource LblTitulosInput}"/>
-                    
-                    <Entry Placeholder="Correo electrónico" Keyboard="Email" Text="{Binding Email}" Style="{StaticResource InputLogin}"/>
+                        <local:RoundedEntry Placeholder="Correo electrónico" Keyboard="Email" Text="{Binding Email}" Style="{StaticResource InputLogin}"/>
+                        
                         <Label Text="Contraseña" Style="{StaticResource LblTitulosInput}"/>
-                        <Entry Placeholder="*******" IsPassword="True" Text="{Binding Contrasena}" Style="{StaticResource InputLogin}"/>
+                        <local:RoundedEntry Placeholder="*******" IsPassword="True" Text="{Binding Contrasena}" Style="{StaticResource InputLogin}"/>
+
                         <Button Text="Iniciar sesión" Command="{Binding LoginCommand}" Style="{StaticResource BtnLogin}"/>
                         <FlexLayout>
                             <Frame WidthRequest="300" HasShadow="False" Padding="0,20,0,20">
@@ -25,18 +28,20 @@
                     </StackLayout>
                 </Frame>
                 <Frame WidthRequest="400" VerticalOptions="Center" HorizontalOptions="End" Padding="90,20,50,10" Margin="0,0">
-                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
-                        <Label Text="O únase también con una cuenta de su red favorita" VerticalOptions="Center" Style="{StaticResource Lblredes}"/>
-                        <FlexLayout VerticalOptions="Center">
-                            <Frame WidthRequest="60" VerticalOptions="Center" HasShadow="False" Padding="0,20,0,20">
-                                <Image Source="google.png" HorizontalOptions="Start" WidthRequest="40" HeightRequest="40"/>
-                            </Frame>
-                            <Frame WidthRequest="50" VerticalOptions="Center" HasShadow="False" Padding="0,20,0,20">
-                                <Image Source="facebook.png" HorizontalOptions="Start" WidthRequest="40" HeightRequest="40"/>
-                            </Frame>
-                        </FlexLayout>
-                    </StackLayout>
-                </Frame>
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+                    <Label Text="O únase también con una cuenta de su red social favorita" VerticalOptions="Center" Style="{StaticResource Lblredes}"/>
+                    <FlexLayout VerticalOptions="Center">
+                        <Frame WidthRequest="60" VerticalOptions="Center" HasShadow="False" Padding="0,20,0,20">
+                            <Image Source="google.png" HorizontalOptions="Start" WidthRequest="40" HeightRequest="40"/>
+                        </Frame>
+                        <Frame WidthRequest="50" VerticalOptions="Center" HasShadow="False" Padding="0,20,0,20">
+                            <Image Source="facebook.png" HorizontalOptions="Start" WidthRequest="40" HeightRequest="40"/>
+                        </Frame>
+                    </FlexLayout>
+                    <Image  HorizontalOptions="Start" Margin="0,15,0,0" Source="LogoLogin.png" />
+                </StackLayout>
+
+            </Frame>
                 <Label Text="No hay conexión a Internet" Background="red" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="End" IsVisible="{Binding Conexion}"/>
             </FlexLayout>
     </ContentPage.Content>

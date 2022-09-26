@@ -13,11 +13,19 @@
   <ItemGroup>
     <None Remove="Fonts\MaterialIconsRegular.ttf" />
     <None Remove="Fonts\MaterialIconsTwoTone.otf" />
+    <None Remove="Fonts\TommyB.otf" />
+    <None Remove="Fonts\TommyBk.otf" />
+    <None Remove="Fonts\TommyR.otf" />
+    <None Remove="Fonts\TommyT.otf" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Fonts\MaterialIconsRegular.ttf" />
     <EmbeddedResource Include="Fonts\MaterialIconsTwoTone.otf" />
+    <EmbeddedResource Include="Fonts\TommyB.otf" />
+    <EmbeddedResource Include="Fonts\TommyBk.otf" />
+    <EmbeddedResource Include="Fonts\TommyR.otf" />
+    <EmbeddedResource Include="Fonts\TommyT.otf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,6 +49,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\inicio.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\JuegoMemoria.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Juegos.xaml">
