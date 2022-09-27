@@ -17,7 +17,14 @@
             <Grid Grid.Row="0">
                 <StackLayout Orientation="Horizontal">
                     <Frame HasShadow="False" BackgroundColor="Transparent" WidthRequest="380" HeightRequest="30">
-                        <Label Text="Memoria I" Style="{StaticResource LblTitulos}" HorizontalOptions="Start"/>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                            <Image WidthRequest="55" HeightRequest="55" Source="home.png">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="HomaBack"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Label Text="Memoria I" Style="{StaticResource LblTitulos}" HorizontalOptions="Start"/>
+                        </StackLayout>
                     </Frame>
                     <Frame HasShadow="False" BackgroundColor="Transparent" WidthRequest="380">
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">

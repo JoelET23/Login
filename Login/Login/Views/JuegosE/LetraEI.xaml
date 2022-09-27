@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Login.Views.JuegosE.LetraEI"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS, Android" Value="0,0,0,0"/>
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <Grid Padding="20,0,20,0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <StackLayout Orientation="Horizontal">
+                    <Frame Padding="0,0,0,0" HasShadow="False" BackgroundColor="Transparent" WidthRequest="380" HeightRequest="60">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center">
+                            <Image WidthRequest="55" HeightRequest="55" Source="home.png">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="HomeBack"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Label Text="Letra E" Style="{StaticResource LblTitulos}" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame HasShadow="False" BackgroundColor="Transparent" WidthRequest="380">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                            <Image WidthRequest="55" HeightRequest="55" Source="salir.png">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="SalirApp"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Grid>
+            <Grid Grid.Row="1">
+                <StackLayout Orientation="Horizontal" HeightRequest="300">
+                    <Frame HasShadow="False" VerticalOptions="Center" Padding="10">
+                        <Image Opacity="0" x:Name="Manzana" WidthRequest="240" HeightRequest="150" VerticalOptions="Center" Source="Manzana.png">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="LetraCorrecta"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Frame>
+                    <Frame HasShadow="False" VerticalOptions="Center" Padding="10">
+                        <Image Opacity="0" x:Name="Platano" WidthRequest="240" HeightRequest="150" VerticalOptions="Center" Source="Platano.png">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="LetraIncorrecta"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Frame>
+                    
+                </StackLayout>
+            </Grid>
+            <Grid Grid.Row="2">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Image VerticalOptions="Center" Source="SlideAct.png" WidthRequest="50" HeightRequest="15" Margin="0,0,10,0"/>
+                    <Image VerticalOptions="Center" Source="SlideDes.png" WidthRequest="50" HeightRequest="15" Margin="0,0,10,0"/>
+                    <Image VerticalOptions="Center" Source="SlideDes.png" WidthRequest="50" HeightRequest="15" Margin="0,0,10,0"/>
+                    <Image VerticalOptions="Center" Source="SlideDes.png" WidthRequest="50" HeightRequest="15" Margin="0,0,10,0"/>
+                    <Image VerticalOptions="Center" Source="SlideDes.png" WidthRequest="50" HeightRequest="15" Margin="0,0,10,0"/>
+                    <Image VerticalOptions="Center" Source="SlideDes.png" WidthRequest="50" HeightRequest="15"/>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

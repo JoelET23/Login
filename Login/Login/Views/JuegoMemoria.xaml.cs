@@ -1,11 +1,12 @@
 ﻿using Login.Models;
 using Login.ViewModels;
+using Login.Views.JuegosMemoria;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,10 +15,18 @@ namespace Login.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class JuegoMemoria : ContentPage
     {
+        public string NombreJugador;
+        public string FotoJugador;
         public JuegoMemoria(string n, string a)
         {
             InitializeComponent();
             BindingContext = new JuegoMemoriaVM();
+
+            NombreUser.Text = n;
+            FotoUser.Source = a;
+
+            NombreJugador = n;
+            FotoJugador = a;
 
             TouchJuego.SelectionChanged += TouchJuego_SelectionChanged;
         }
@@ -28,7 +37,11 @@ namespace Login.Views
             for (int i = 0; i < _clickJuegos.Count; i++)
             {
                 var _clickJuego = _clickJuegos[i] as JuegoMemoriaModels;
-                await Navigation.PushAsync(new JuegoMemoria("dom", "dem"));
+
+                //Navigation.ShowPopup(new ModalJugar());
+
+                await Navigation.PushAsync(new FrutasI());
+
                 /*Intent intent = new Intent((Context)_clickJuego.NombreJuego, typeof(Juegos));
                 DisplayAlert("Prueba", msg, "OK");*/
             }
@@ -41,6 +54,11 @@ namespace Login.Views
         private async void SalirApp(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new inicio());
+        }
+        private async void HomaBack(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new inicio());
+            //Navigation.ShowPopup(new ModalSalirJuego(NombreJugador, FotoJugador));
         }
     }
 }
