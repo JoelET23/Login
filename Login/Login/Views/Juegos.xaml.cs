@@ -1,6 +1,7 @@
 ﻿using Android.Content;
 using Login.Models;
 using Login.ViewModels;
+using Login.Views.JuegosNumeros;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
@@ -46,7 +47,8 @@ namespace Login.Views
                 }
                 else if (IdJuego == 2)
                 {
-                    await Navigation.PushAsync(new JuegoTrazo());
+                    //await Navigation.PushAsync(new JuegoTrazo());
+                    await Navigation.PushAsync(new InicioModuloView());
                 }
                 else if (IdJuego == 3)
                 {
@@ -54,7 +56,7 @@ namespace Login.Views
                 }
                 else if (IdJuego == 4)
                 {
-                    await Navigation.PushAsync(new JuegoNumero());
+                    await Navigation.PushAsync(new CeroCinco());
                 }
                 
                 /*Intent intent = new Intent((Context)_clickJuego.NombreJuego, typeof(Juegos));

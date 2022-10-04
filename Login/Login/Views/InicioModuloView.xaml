@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Login.Views.InicioModuloView"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImageSource="BgModulo.png">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS, Android" Value="0,0,0,0"/>
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <Grid Padding="20,0,20,0">
+            <StackLayout Orientation="Horizontal">
+                <Frame x:Name="BtnJuegosLis">
+                    <StackLayout Orientation="Vertical">
+                        <Frame>
+                            <StackLayout Orientation="Vertical">
+                                <Image Source="Manzana.png"/>
+                                <Label>Memoria</Label>
+                                <Label>Texto de apoyo</Label>
+                            </StackLayout>
+                        </Frame>
+                        <Frame>
+                            <Button Clicked="BtnJuego" Text="Iniciar juego"/>
+                        </Frame>
+                    </StackLayout>
+                </Frame>
+                <Frame BackgroundColor="Transparent" HorizontalOptions="End">
+                    <Image x:Name="RobotGaby" WidthRequest="350" HeightRequest="300" Source="RobotMod.png"/>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms"
+           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+           IsLightDismissEnabled="False"
+           Size="350,350"
+           x:Class="Login.ModalJugar">
+    <StackLayout Orientation="Vertical" Padding="50,30,50,30">
+        <Image HorizontalOptions="Center" Source="Modal1.png" />
+        <Label Style="{StaticResource LblMdT}" Text="Jugemos"/>
+        <Label Style="{StaticResource LblMdD}" Text="¡Tú puedes hacerlo!"/>
+        <Button Style="{StaticResource BtnModal}"  Text="Iniciar" Clicked="Button_Clicked"/>
+    </StackLayout>
+</xct:Popup>

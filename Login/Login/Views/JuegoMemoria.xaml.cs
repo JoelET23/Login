@@ -38,7 +38,7 @@ namespace Login.Views
             {
                 var _clickJuego = _clickJuegos[i] as JuegoMemoriaModels;
 
-                //Navigation.ShowPopup(new ModalJugar());
+                Navigation.ShowPopup(new ModalJugar());
 
                 await Navigation.PushAsync(new FrutasI());
 

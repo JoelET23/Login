@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Login.Views.JuegosNumeros.CeroCincoII"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS, Android" Value="0,0,0,0"/>
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <Grid Padding="20,0,20,0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <StackLayout Orientation="Horizontal">
+                    <Frame Padding="0,10,0,0" HasShadow="False" BackgroundColor="Transparent" WidthRequest="800" HeightRequest="60">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center">
+                            <Image WidthRequest="55" HeightRequest="55" Source="home.png">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="HomeBack"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Label Text="Identifica del 0 al 5" Style="{StaticResource LblTitulos}" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" HeightRequest="340">
+                    <Frame HasShadow="False" BackgroundColor="Transparent" VerticalOptions="Center" Padding="0" Margin="0,0,20,0" CornerRadius="20">
+                        <Image VerticalOptions="Center" x:Name="Manzana" WidthRequest="250" HeightRequest="200" Source="TrazoDos.png"/>
+                    </Frame>
+                    <Frame x:Name="FrameVis" HasShadow="False" BackgroundColor="Transparent" VerticalOptions="Center" Padding="0">
+                        <StackLayout Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <Frame Padding="25,20,20,15" CornerRadius="15" Margin="0,0,20,0">
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="NumIncorrectoI"/>
+                                    </Frame.GestureRecognizers>
+                                    <Image x:Name="IncoI" WidthRequest="90" HeightRequest="90" Source="GloboCero.png"/>
+                                </Frame>
+                                <Frame Padding="25,20,20,15" CornerRadius="15" Margin="0,0,20,0">
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="NumIncorrectoII"/>
+                                    </Frame.GestureRecognizers>
+                                    <Image x:Name="IncoII" WidthRequest="90" HeightRequest="90" Source="GloboUno.png"/>
+                                </Frame>
+                                <Frame x:Name="CorrectoTp" Padding="25,20,20,15" CornerRadius="15">
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="NumCorrecto"/>
+                                    </Frame.GestureRecognizers>
+                                    <Image WidthRequest="90" HeightRequest="90" Source="GloboDos.png"/>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
+                                <Frame Padding="25,20,20,15" CornerRadius="15" Margin="0,0,20,0">
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="NumIncorrectoIII"/>
+                                    </Frame.GestureRecognizers>
+                                    <Image x:Name="IncoIII" WidthRequest="90" HeightRequest="90" Source="GloboTres.png"/>
+                                </Frame>
+                                <Frame Padding="25,20,20,15" CornerRadius="15" Margin="0,0,20,0">
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="NumIncorrectoIV"/>
+                                    </Frame.GestureRecognizers>
+                                    <Image x:Name="IncoIV" WidthRequest="90" HeightRequest="90" Source="GloboCuatro.png"/>
+                                </Frame>
+                                <Frame Padding="25,20,20,15" CornerRadius="15">
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="NumIncorrectoV"/>
+                                    </Frame.GestureRecognizers>
+                                    <Image x:Name="IncoV" WidthRequest="90" HeightRequest="90" Source="GloboCinco.png"/>
+                                </Frame>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame x:Name="FrameNoVis" Padding="15,70" IsVisible="False" HasShadow="False" BackgroundColor="Transparent" HorizontalOptions="Center">
+                        <StackLayout Orientation="Horizontal" HeightRequest="100">
+                            <Frame x:Name="TapCorrecto" HasShadow="False" Padding="50,20" BackgroundColor="#3124B5" Margin="0,0,20,0" CornerRadius="20">
+                                <Image x:Name="FrutI" WidthRequest="110" HeightRequest="50" Source="GloboDos.png"/>
+                            </Frame>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Image VerticalOptions="Center" Source="SlideDes.png" WidthRequest="50" HeightRequest="15" Margin="0,0,10,0"/>
+                    <Image VerticalOptions="Center" Source="SlideAct.png" WidthRequest="50" HeightRequest="15" Margin="0,0,10,0"/>
+                    <Image VerticalOptions="Center" Source="SlideDes.png" WidthRequest="50" HeightRequest="15" Margin="0,0,10,0"/>
+                    <Image VerticalOptions="Center" Source="SlideDes.png" WidthRequest="50" HeightRequest="15" Margin="0,0,10,0"/>
+                    <Image VerticalOptions="Center" Source="SlideDes.png" WidthRequest="50" HeightRequest="15" Margin="0,0,10,0"/>
+                    <Image VerticalOptions="Center" Source="SlideDes.png" WidthRequest="50" HeightRequest="15"/>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

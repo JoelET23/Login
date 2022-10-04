@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -22,24 +22,29 @@ namespace Login.Views.JuegosMemoria
 
         private async void ClickInicioFruta(object sender, EventArgs e)
         {
-            
-            FrameNoVis.IsVisible = false;
-
-            await Task.WhenAll(
-                Platano.FadeTo(0, 200)
-            );
+            await FrameNoVis.FadeTo(0, 500);
+            await FrameVis.FadeTo(0, 500);
             await Task.Delay(500);
-            FrameVis.IsVisible = true;
+            FrameVis.IsVisible = false;
+            /*await Task.WhenAll(
+                Platano.FadeTo(0, 200)
+            );*/
+            
+            FrameNoVis.IsVisible = true;
+            await Task.Delay(500);
+            await FrameNoVis.FadeTo(1, 500);
         }
 
         private async void FrutaCorrecta(object sender, EventArgs e)
         {
-            FrameVis.IsVisible = false;
+            TapCorrecto.BackgroundColor = Color.FromHex("#3124B5");
+            await Task.Delay(1000);
+            FrameVis.IsVisible = true;
+            FrameNoVis.IsVisible = false;
+            await FrameVis.FadeTo(1, 500);
 
-            await Task.WhenAll(
-                Platano.RotateTo(360, 1000),
-                Platano.FadeTo(1, 500)
-            );
+
+            //Navigation.ShowPopup(new ModalBien());
             await Task.Delay(1500);
             await Navigation.PushAsync(new FrutasII());
         }
@@ -66,6 +71,7 @@ namespace Login.Views.JuegosMemoria
         }
         private async void SalirApp(object sender, EventArgs e)
         {
+            //Navigation.ShowPopup(new ModalSalirJuego());
             await Navigation.PushAsync(new inicio());
         }
     }

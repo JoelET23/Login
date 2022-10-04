@@ -1,6 +1,7 @@
 ﻿using Login.Models;
 using Login.ViewModels;
 using Login.Views;
+using Login.Views.JuegosMemoria;
 using Prism;
 using Prism.Ioc;
 using Prism.Unity;
@@ -35,6 +36,8 @@ namespace Login
             containerRegistry.RegisterForNavigation<inicio, inicioVM>();
             containerRegistry.RegisterForNavigation<Juegos, juegosVM>();
             containerRegistry.RegisterForNavigation<JuegoMemoria, JuegoMemoriaVM>();
+            containerRegistry.RegisterForNavigation<FrutasI, ModalVM>();
+            containerRegistry.RegisterForNavigation<FrutasII, ModalVM>();
         }
     }
 }
