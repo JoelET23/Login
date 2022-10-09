@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Login.Views.JuegosMemoria.FrutasII"
-             NavigationPage.HasNavigationBar="false">
+             NavigationPage.HasNavigationBar="false"
+             BackgroundColor="#EDEDF3">
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
             <On Platform="iOS, Android" Value="0,0,0,0"/>
@@ -18,10 +19,10 @@
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0">
-                <StackLayout Orientation="Horizontal">
-                    <Frame Padding="0,0,0,0" HasShadow="False" BackgroundColor="Transparent" WidthRequest="380" HeightRequest="60">
+                <StackLayout Orientation="Horizontal" Padding="0,10,0,20">
+                    <Frame Padding="0,0,0,0" HasShadow="False" BackgroundColor="Transparent" WidthRequest="400" HeightRequest="60">
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center">
-                            <Image WidthRequest="55" HeightRequest="55" Source="home.png">
+                            <Image WidthRequest="55" HeightRequest="55" Source="BackApp.png">
                                 <Image.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="HomeBack"/>
                                 </Image.GestureRecognizers>
@@ -29,9 +30,9 @@
                             <Label Text="Fruta I" Style="{StaticResource LblTitulos}" VerticalOptions="Center"/>
                         </StackLayout>
                     </Frame>
-                    <Frame HasShadow="False" BackgroundColor="Transparent" WidthRequest="380">
+                    <Frame Padding="0" HasShadow="False" IsVisible="false" BackgroundColor="Transparent" WidthRequest="400">
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                            <Image WidthRequest="55" HeightRequest="55" Source="salir.png">
+                            <Image WidthRequest="50" HeightRequest="50" Source="salir.png">
                                 <Image.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="SalirApp"/>
                                 </Image.GestureRecognizers>
@@ -42,32 +43,32 @@
             </Grid>
 
             <Grid Grid.Row="1">
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" HeightRequest="250">
-                    <Frame HasShadow="False" VerticalOptions="Center" Padding="10,30" Margin="0,0,20,0" CornerRadius="20">
-                        <Image Opacity="0" VerticalOptions="Center" x:Name="Manzana" WidthRequest="240" HeightRequest="150" Source="Higo.png"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" HeightRequest="180">
+                    <Frame x:Name="FramInicio" HasShadow="False" VerticalOptions="Center" Padding="25,20" Margin="0,0,20,0" CornerRadius="20">
+                        <Image Opacity="0" VerticalOptions="Center" x:Name="Manzana" WidthRequest="150" HeightRequest="150" Source="Higo.png"/>
                     </Frame>
-                    <Frame x:Name="FrameVis" HasShadow="False" VerticalOptions="Center" Padding="10,30" CornerRadius="20">
-                        <Image Opacity="0" VerticalOptions="Center" x:Name="Platano" WidthRequest="240" HeightRequest="150" Source="Sandia.png"/>
+                    <Frame x:Name="FrameVis" HasShadow="False" VerticalOptions="Center" Padding="25,20" CornerRadius="20">
+                        <Image Opacity="0" VerticalOptions="Center" x:Name="Platano" WidthRequest="150" HeightRequest="150" Source="Sandia.png"/>
                     </Frame>
 
-                    <Frame x:Name="FrameNoVis" Padding="15,70" IsVisible="False" HasShadow="False" BackgroundColor="Transparent" HorizontalOptions="Center">
+                    <Frame x:Name="FrameNoVis" Padding="20,15" IsVisible="False" HasShadow="False" BackgroundColor="Transparent" HorizontalOptions="Center">
                         <StackLayout Orientation="Horizontal" HeightRequest="100">
-                            <Frame x:Name="TapCorrecto" HasShadow="False" Padding="15,0" Margin="0,0,20,0" CornerRadius="20">
-                                <Image x:Name="FrutI" WidthRequest="80" HeightRequest="80" Source="Sandia.png">
+                            <Frame x:Name="TapCorrecto" HasShadow="False" Padding="25,0" Margin="0,0,20,0" CornerRadius="20">
+                                <Image x:Name="FrutI" WidthRequest="120" HeightRequest="120" Source="Sandia.png">
                                     <Image.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="FrutaCorrecta"/>
                                     </Image.GestureRecognizers>
                                 </Image>
                             </Frame>
                             <Frame HasShadow="False" Padding="15,0" Margin="0,0,20,0" CornerRadius="20">
-                                <Image x:Name="FrutII" WidthRequest="80" HeightRequest="80" Source="Platano.png">
+                                <Image x:Name="FrutII" WidthRequest="120" HeightRequest="120" Source="Papaya.png">
                                     <Image.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="FrutaIncorrectaI"/>
                                     </Image.GestureRecognizers>
                                 </Image>
                             </Frame>
                             <Frame HasShadow="False" Padding="15,0" CornerRadius="20">
-                                <Image x:Name="FrutIII" WidthRequest="80" HeightRequest="80" Source="Manzana.png">
+                                <Image x:Name="FrutIII" WidthRequest="120" HeightRequest="120" Source="Fresa.png">
                                     <Image.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="FrutaIncorrectaII"/>
                                     </Image.GestureRecognizers>
@@ -80,15 +81,19 @@
 
             <Grid Grid.Row="2">
                 <StackLayout Orientation="Horizontal">
-                    <Frame WidthRequest="120" HasShadow="False" Padding="0" BackgroundColor="Transparent">
-                        <Button Text="Listo" Clicked="ClickInicioFruta" Style="{StaticResource BtnLogin}"/>
+                    <Frame WidthRequest="120" HasShadow="False" Padding="0,15,0,0" BackgroundColor="Transparent">
+                        <Image x:Name="BtnListoOff" Source="BtnListo.png">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="BtnReady"/>
+                            </Image.GestureRecognizers>
+                        </Image>
                     </Frame>
                 </StackLayout>
             </Grid>
 
             <Grid Grid.Row="3">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Image VerticalOptions="Center" Source="SlideDes.png" WidthRequest="50" HeightRequest="15" Margin="0,0,10,0"/>
+                    <Image VerticalOptions="Center" Source="SlideAct.png" WidthRequest="50" HeightRequest="15" Margin="0,0,10,0"/>
                     <Image VerticalOptions="Center" Source="SlideAct.png" WidthRequest="50" HeightRequest="15" Margin="0,0,10,0"/>
                     <Image VerticalOptions="Center" Source="SlideDes.png" WidthRequest="50" HeightRequest="15" Margin="0,0,10,0"/>
                     <Image VerticalOptions="Center" Source="SlideDes.png" WidthRequest="50" HeightRequest="15" Margin="0,0,10,0"/>

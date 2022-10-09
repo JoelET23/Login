@@ -1,27 +1,38 @@
-﻿using Login.Views.JuegosMemoria;
+﻿using Login.Views;
+using Login.Views.JuegosMemoria;
+using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.CommunityToolkit.UI.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Login
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ModalJugar : Popup
+    public partial class ModalJugar : Rg.Plugins.Popup.Pages.PopupPage
     {
-        public ModalJugar()
+        public string NombreJugador;
+        public string FotoJugador;
+        public ModalJugar(string n, string a)
         {
             InitializeComponent();
+            NombreJugador = n;
+            FotoJugador = a;
         }
 
-        void Button_Clicked(Object sender, EventArgs e)
+        async void BtnEmpezar(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new FrutasI());
-            Dismiss(null);
+            await Navigation.PushAsync(new FrutasI(NombreJugador, FotoJugador));
+            await Navigation.PopPopupAsync();
+        }
+
+        async void BtnCerrar(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new JuegoMemoria(NombreJugador, FotoJugador));
+            await Navigation.PopPopupAsync();
         }
     }
 }

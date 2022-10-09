@@ -12,11 +12,11 @@ using Xamarin.Forms.Xaml;
 namespace Login.Views.JuegosMemoria
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class FrutasII : ContentPage
+    public partial class FrutasV : ContentPage
     {
         public string NombreJugador;
         public string FotoJugador;
-        public FrutasII(string n, string a)
+        public FrutasV(string n, string a)
         {
             InitializeComponent();
 
@@ -26,7 +26,6 @@ namespace Login.Views.JuegosMemoria
             Manzana.FadeTo(1, 500);
             Platano.FadeTo(1, 500);
         }
-
         private async void BtnReady(object sender, EventArgs e)
         {
             Vibration.Vibrate(TimeSpan.FromMilliseconds(500));
@@ -58,7 +57,7 @@ namespace Login.Views.JuegosMemoria
             await PopupNavigation.Instance.PushAsync(new ModalBien());
             await Task.Delay(3000);
             await Navigation.PopPopupAsync();
-            await Navigation.PushAsync(new FrutasIII(NombreJugador, FotoJugador));
+            await Navigation.PushAsync(new FrutasVI(NombreJugador, FotoJugador));
         }
 
         private async void FrutaIncorrectaI(object sender, EventArgs e)

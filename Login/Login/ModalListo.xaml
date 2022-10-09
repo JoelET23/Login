@@ -2,21 +2,26 @@
 <popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
                  xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                 x:Class="Login.ModalJugar">
+                 x:Class="Login.ModalListo">
     <Frame BackgroundColor="#FFFFFF" HasShadow="False" CornerRadius="25" HorizontalOptions="Center" VerticalOptions="Center" Padding="0">
-        <StackLayout Orientation="Vertical" Padding="50,30,50,30">
-            <Image HorizontalOptions="Center" WidthRequest="220" HeightRequest="110" Source="Modal1.png" />
-            <Label Style="{StaticResource LblMdT}" Text="Jugemos"/>
-            <Label Style="{StaticResource LblMdD}" Text="¡Tú puedes hacerlo!"/>
+        <StackLayout Orientation="Vertical" Padding="25,30,25,30">
+            <Image HorizontalOptions="Center" Source="Modal2.png" />
+            <Label Style="{StaticResource LblMdT}" Text="¡Lo lograste!"/>
+            <Label Style="{StaticResource LblMdD}" Text="¿Quieres continuar con el siguiente nivel?"/>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,10,0,0">
-                <Image Source="JugarMd.png" WidthRequest="60" HeightRequest="60" Margin="0,0,15,0">
+                <Image Source="AceptarMd.png" WidthRequest="60" HeightRequest="60" Margin="0,0,15,0">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="BtnEmpezar"/>
+                        <TapGestureRecognizer Tapped="BtnSalir" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="RepetirMd.png" WidthRequest="60" HeightRequest="60" Margin="0,0,15,0">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BtnRepetir" />
                     </Image.GestureRecognizers>
                 </Image>
                 <Image Source="CerrarMd.png" WidthRequest="60" HeightRequest="60">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="BtnCerrar"/>
+                        <TapGestureRecognizer Tapped="BtnCancelar"/>
                     </Image.GestureRecognizers>
                 </Image>
             </StackLayout>

@@ -2,10 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Login.Views.JuegoMemoria"
-             NavigationPage.HasNavigationBar="false">
+             NavigationPage.HasNavigationBar="false"
+             BackgroundColor="#EDEDF3">
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
-            <On Platform="iOS, Android" Value="0,0,0,0"/>
+            <On Platform="iOS, Android" Value="0,0,0,15"/>
         </OnPlatform>
     </ContentPage.Padding>
     <ContentPage.Content>
@@ -51,7 +52,7 @@
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Frame HasShadow="False" HeightRequest="120" Padding="15" CornerRadius="20" BackgroundColor="#FFFFFF">
+                            <Frame HasShadow="False" HeightRequest="110" Padding="15" CornerRadius="20" BackgroundColor="#FFFFFF">
                                 <StackLayout Orientation="Vertical">
                                     <Image Source="{Binding Foto}" WidthRequest="100" HeightRequest="50" HorizontalOptions="Start"/>
                                     <Label Text="{Binding NombreJuego}" Style="{StaticResource LblNombres}"/>

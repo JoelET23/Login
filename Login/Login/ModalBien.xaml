@@ -1,13 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             IsLightDismissEnabled="False"
-             Size="300,250"
-             x:Class="Login.ModalBien">
-    <StackLayout Orientation="Vertical" Padding="50,30,50,30">
-        <Image HorizontalOptions="Center" Source="Modal1.png" />
-        <Label Style="{StaticResource LblMdT}" Text="¡Muy bien!"/>
-        <Button Style="{StaticResource BtnModal}"  Text="Continuar" Clicked="Button_Clicked"/>
-    </StackLayout>
-</xct:Popup>
+<popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 x:Class="Login.ModalBien">
+    <Frame BackgroundColor="#FFFFFF" HasShadow="False" CornerRadius="25" HorizontalOptions="Center" VerticalOptions="Center" Padding="0">
+        <StackLayout Orientation="Vertical" Padding="50,30,50,30">
+            <Image HorizontalOptions="Center" Source="Modal2.png" />
+            <Label Style="{StaticResource LblMdT}" Text="¡Muy bien!"/>
+        </StackLayout>
+    </Frame>
+</popup:PopupPage>

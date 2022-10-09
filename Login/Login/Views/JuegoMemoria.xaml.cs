@@ -1,12 +1,13 @@
 ﻿using Login.Models;
 using Login.ViewModels;
 using Login.Views.JuegosMemoria;
+using Rg.Plugins.Popup.Extensions;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -38,9 +39,9 @@ namespace Login.Views
             {
                 var _clickJuego = _clickJuegos[i] as JuegoMemoriaModels;
 
-                Navigation.ShowPopup(new ModalJugar());
-
-                await Navigation.PushAsync(new FrutasI());
+                await PopupNavigation.Instance.PushAsync(new ModalJugar(NombreJugador, FotoJugador));
+                
+                //await Navigation.PushAsync(new FrutasI());
 
                 /*Intent intent = new Intent((Context)_clickJuego.NombreJuego, typeof(Juegos));
                 DisplayAlert("Prueba", msg, "OK");*/

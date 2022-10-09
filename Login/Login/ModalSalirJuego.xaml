@@ -1,18 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             IsLightDismissEnabled="False"
-             Size="350,350"
-             x:Class="Login.ModalSalirJuego">
-    <StackLayout Orientation="Vertical" Padding="25,30,25,30">
-        <Image HorizontalOptions="Center" Source="Modal2.png" />
-        <Label Style="{StaticResource LblMdT}" Text="¿Deseas salir?"/>
-        <Label Style="{StaticResource LblMdD}" Text="Si sales, no se guadará lo avanzado."/>
-        <StackLayout Orientation="Horizontal">
-            <Button Style="{StaticResource BtnModal}"  Text="Si, salir" Clicked="BtnSalir"/>
-            <Button Style="{StaticResource BtnModalCan}"  Text="Cancelar" Clicked="BtnCancelar"/>
+<popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 x:Class="Login.ModalSalirJuego">
+    <Frame BackgroundColor="#FFFFFF" HasShadow="False" CornerRadius="25" HorizontalOptions="Center" VerticalOptions="Center" Padding="0">
+        <StackLayout Orientation="Vertical" Padding="25,30,25,30">
+            <Image HorizontalOptions="Center" Source="Modal1.png" />
+            <Label Style="{StaticResource LblMdT}" Text="¿Deseas salir?"/>
+            <Label Style="{StaticResource LblMdD}" Text="Si sales, no se guadará lo avanzado."/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,10,0,0">
+                <Image Source="AceptarMd.png" WidthRequest="60" HeightRequest="60" Margin="0,0,15,0">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BtnSalir" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="CerrarMd.png" WidthRequest="60" HeightRequest="60">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BtnCancelar"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
         </StackLayout>
-
-    </StackLayout>
-</xct:Popup>
+    </Frame>
+</popup:PopupPage>

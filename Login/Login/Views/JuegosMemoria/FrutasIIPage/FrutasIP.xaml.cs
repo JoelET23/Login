@@ -3,19 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Login
+namespace Login.Views.JuegosMemoria.FrutasIIPage
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ModalBien : Rg.Plugins.Popup.Pages.PopupPage
+    public partial class FrutasIP : ContentPage
     {
-        public ModalBien()
+        public string NombreJugador;
+        public string FotoJugador;
+        public FrutasIP(string n, string a)
         {
             InitializeComponent();
-
+            NombreJugador = n;
+            FotoJugador = a;
         }
- 
     }
 }

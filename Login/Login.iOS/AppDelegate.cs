@@ -28,6 +28,8 @@ namespace Login.iOS
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App(new IosInitializer()));
 
+            Rg.Plugins.Popup.Popup.Init();
+
             return base.FinishedLaunching(app, options);
         }
     }

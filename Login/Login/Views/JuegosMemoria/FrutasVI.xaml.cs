@@ -12,11 +12,11 @@ using Xamarin.Forms.Xaml;
 namespace Login.Views.JuegosMemoria
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class FrutasII : ContentPage
+    public partial class FrutasVI : ContentPage
     {
         public string NombreJugador;
         public string FotoJugador;
-        public FrutasII(string n, string a)
+        public FrutasVI(string n, string a)
         {
             InitializeComponent();
 
@@ -55,10 +55,10 @@ namespace Login.Views.JuegosMemoria
             await FrameVis.FadeTo(1, 500);
 
             await Task.Delay(1500);
-            await PopupNavigation.Instance.PushAsync(new ModalBien());
-            await Task.Delay(3000);
-            await Navigation.PopPopupAsync();
-            await Navigation.PushAsync(new FrutasIII(NombreJugador, FotoJugador));
+            await PopupNavigation.Instance.PushAsync(new ModalListo(NombreJugador, FotoJugador));
+            //await Task.Delay(3000);
+            //await Navigation.PopPopupAsync();
+            //await Navigation.PushAsync(new FrutasVI(NombreJugador, FotoJugador));
         }
 
         private async void FrutaIncorrectaI(object sender, EventArgs e)

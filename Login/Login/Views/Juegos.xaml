@@ -46,9 +46,9 @@
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Frame HeightRequest="150" Padding="15" CornerRadius="20" BackgroundColor="#FFFFFF">
+                            <Frame HeightRequest="125" Padding="15" CornerRadius="20" BackgroundColor="#FFFFFF">
                                 <StackLayout Orientation="Vertical">
-                                    <Image Source="{Binding Foto}" WidthRequest="50" HorizontalOptions="Start"/>
+                                    <Image Source="{Binding Foto}" WidthRequest="40" Margin="10,0,0,0" HorizontalOptions="Start"/>
                                     <Label Text="{Binding Nombre}" Style="{StaticResource LblNombres}"/>
                                     <Label Text="{Binding Porcentaje}" Style="{StaticResource LblEdad}"/>
                                 </StackLayout>
@@ -58,7 +58,7 @@
                 </CollectionView>
             </Grid>
             <Grid Grid.Row="2">
-                <Image HorizontalOptions="End" Source="MissGabi.png"/>
+                <Image HorizontalOptions="End" WidthRequest="180" HeightRequest="150" Source="MissGabi.png"/>
             </Grid>
         </Grid>
 

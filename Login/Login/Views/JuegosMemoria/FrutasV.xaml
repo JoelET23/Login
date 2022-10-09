@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Login.Views.JuegosMemoria.FrutasI"
+             x:Class="Login.Views.JuegosMemoria.FrutasV"
              NavigationPage.HasNavigationBar="false"
              BackgroundColor="#EDEDF3">
     <ContentPage.Padding>
@@ -17,7 +17,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            
+
             <Grid Grid.Row="0">
                 <StackLayout Orientation="Horizontal" Padding="0,10,0,20">
                     <Frame Padding="0,0,0,0" HasShadow="False" BackgroundColor="Transparent" WidthRequest="400" HeightRequest="60">
@@ -41,40 +41,40 @@
                     </Frame>
                 </StackLayout>
             </Grid>
-            
+
             <Grid Grid.Row="1">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center" HeightRequest="180">
                     <Frame x:Name="FramInicio" HasShadow="False" VerticalOptions="Center" Padding="25,20" Margin="0,0,20,0" CornerRadius="20">
-                        <Image Opacity="0" VerticalOptions="Center" x:Name="Manzana" WidthRequest="150" HeightRequest="150" Source="Manzana.png"/>
+                        <Image Opacity="0" VerticalOptions="Center" x:Name="Manzana" WidthRequest="150" HeightRequest="150" Source="Higo.png"/>
                     </Frame>
                     <Frame x:Name="FrameVis" HasShadow="False" VerticalOptions="Center" Padding="25,20" CornerRadius="20">
-                        <Image Opacity="0" VerticalOptions="Center" x:Name="Platano" WidthRequest="150" HeightRequest="150" Source="Platano.png"/>
+                        <Image Opacity="0" VerticalOptions="Center" x:Name="Platano" WidthRequest="150" HeightRequest="150" Source="Manzana.png"/>
                     </Frame>
-                    
+
                     <Frame x:Name="FrameNoVis" Padding="20,15" IsVisible="False" HasShadow="False" BackgroundColor="Transparent" HorizontalOptions="Center">
                         <StackLayout Orientation="Horizontal" HeightRequest="100">
-                            <Frame HasShadow="False" Padding="15,0" Margin="0,0,20,0" CornerRadius="20">
-                                <Image x:Name="FrutII" WidthRequest="120" HeightRequest="120" Source="Papaya.png">
-                                    <Image.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="FrutaIncorrectaI"/>
-                                    </Image.GestureRecognizers>
-                                </Image>
-                            </Frame>
                             <Frame x:Name="TapCorrecto" HasShadow="False" Padding="25,0" Margin="0,0,20,0" CornerRadius="20">
-                                <Image x:Name="FrutI" WidthRequest="120" HeightRequest="120" Source="Platano.png">
+                                <Image x:Name="FrutI" WidthRequest="120" HeightRequest="120" Source="Manzana.png">
                                     <Image.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="FrutaCorrecta"/>
                                     </Image.GestureRecognizers>
                                 </Image>
                             </Frame>
-                            
+                            <Frame HasShadow="False" Padding="15,0" Margin="0,0,20,0" CornerRadius="20">
+                                <Image x:Name="FrutII" WidthRequest="120" HeightRequest="120" Source="Fresa.png">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="FrutaIncorrectaI"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Frame>
                             <Frame HasShadow="False" Padding="15,0" CornerRadius="20">
-                                <Image x:Name="FrutIII" WidthRequest="120" HeightRequest="120" Source="Fresa.png">
+                                <Image x:Name="FrutIII" WidthRequest="120" HeightRequest="120" Source="Sandia.png">
                                     <Image.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="FrutaIncorrectaII"/>
                                     </Image.GestureRecognizers>
                                 </Image>
                             </Frame>
+                            
                         </StackLayout>
                     </Frame>
                 </StackLayout>
@@ -91,14 +91,14 @@
                     </Frame>
                 </StackLayout>
             </Grid>
-            
+
             <Grid Grid.Row="3">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                     <Image VerticalOptions="Center" Source="SlideAct.png" WidthRequest="50" HeightRequest="15" Margin="0,0,10,0"/>
-                    <Image VerticalOptions="Center" Source="SlideDes.png" WidthRequest="50" HeightRequest="15" Margin="0,0,10,0"/>
-                    <Image VerticalOptions="Center" Source="SlideDes.png" WidthRequest="50" HeightRequest="15" Margin="0,0,10,0"/>
-                    <Image VerticalOptions="Center" Source="SlideDes.png" WidthRequest="50" HeightRequest="15" Margin="0,0,10,0"/>
-                    <Image VerticalOptions="Center" Source="SlideDes.png" WidthRequest="50" HeightRequest="15" Margin="0,0,10,0"/>
+                    <Image VerticalOptions="Center" Source="SlideAct.png" WidthRequest="50" HeightRequest="15" Margin="0,0,10,0"/>
+                    <Image VerticalOptions="Center" Source="SlideAct.png" WidthRequest="50" HeightRequest="15" Margin="0,0,10,0"/>
+                    <Image VerticalOptions="Center" Source="SlideAct.png" WidthRequest="50" HeightRequest="15" Margin="0,0,10,0"/>
+                    <Image VerticalOptions="Center" Source="SlideAct.png" WidthRequest="50" HeightRequest="15" Margin="0,0,10,0"/>
                     <Image VerticalOptions="Center" Source="SlideDes.png" WidthRequest="50" HeightRequest="15"/>
                 </StackLayout>
             </Grid>
